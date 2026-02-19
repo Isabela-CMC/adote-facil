@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "mocha --timeout 30000 --exit tests/**/*.test.mjs"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.40.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.0"
+  }
+}

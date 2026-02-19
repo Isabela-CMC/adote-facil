@@ -33,3 +33,15 @@
 
 * **Cenário de sucesso:** Clico no botão de interesse no anúncio, mando um "Oi" e o chat abre na minha tela de "Minhas conversas".
 * **Cenário de erro:** Tentar enviar uma mensagem sem escrever nada. O sistema não deve processar o envio de texto vazio.
+
+### [US05] Navegação pelo Menu Lateral e Logout  
+
+**Como** usuário logado,  
+**quero** navegar pelas opções do menu lateral e realizar logout,  
+**para** acessar as funcionalidades da plataforma e encerrar minha sessão quando desejar.
+
+- **Cenário de sucesso (navegação):**  
+  Após fazer login, clico em cada item do menu lateral (“Animais disponíveis para adoção”, “Disponibilizar animal para adoção”, “Meus animais disponíveis para adoção”, “Minhas conversas”, “Editar dados pessoais”) e sou redirecionado corretamente para a URL correspondente.
+
+- **Cenário de sucesso (logout):**  
+  Após estar logado, clico em “Sair” e sou redirecionado para a página de login (`/login`).

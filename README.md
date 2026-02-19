@@ -80,3 +80,49 @@ docker compose up
 ```
 
 Em seguida, basta acessar a url http://localhost:3000 para ter acesso à plataforma (caso tenha trocado a porta de execução do frontend, altere o 3000 para a porta no qual o frontend está executando).
+
+## Testes de Aceitação com Selenium
+
+Este projeto contém **8 cenários de teste** distribuídos em **5 histórias de usuário**, desenvolvidos com **Selenium WebDriver** e **Mocha**, executados no **Chrome em modo headless**.
+
+Todos os testes estão organizados na pasta `tests/` na raiz do projeto.
+
+### Estrutura
+
+```
+tests/
+├── helpers.mjs
+├── us01_criar_conta.test.mjs
+├── us02_cadastrar_animal.test.mjs
+├── us03_procurar_pet.test.mjs
+└── us04_navegacao_logout.test.mjs
+```
+
+- `helpers.mjs`: Funções auxiliares para criar o driver, realizar login, cadastro e gerar e-mails únicos para teste.
+- `us01_criar_conta`: Testa o cadastro de usuário (sucesso e tentativa com e-mail duplicado).
+- `us02_cadastrar_animal`: Testa o cadastro de animal com foto e seleção de tipo/gênero, além de validação de campos obrigatórios.
+- `us03_procurar_pet`: Testa a busca com filtros (tipo, gênero) e o cenário de filtro sem resultados.
+- `us04_navegacao_logout`: Testa a navegação pelo menu lateral e o logout do sistema.
+
+### Como Funciona
+
+Os testes simulam interações reais do usuário no navegador, como preenchimento de formulários, upload de imagens, cliques em menus e navegação entre páginas.
+Cada cenário valida comportamentos esperados, como:
+
+- Redirecionamentos de URL
+- Exibição de mensagens de erro ou sucesso
+- Validação de campos obrigatórios
+- Funcionamento dos filtros de busca
+- Navegação pelo menu lateral e logout
+
+### Como Executar
+
+1. Certifique-se de que a aplicação está rodando:
+   - Frontend: `http://localhost:3000`
+   - Backend: `http://localhost:8080`
+
+2. No diretório raiz do projeto, execute:
+
+```bash
+npm test
+```
